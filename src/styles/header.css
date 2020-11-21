@@ -1,0 +1,12 @@
+header {
+  background-color: rgb(26, 26, 26);
+  color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+}
