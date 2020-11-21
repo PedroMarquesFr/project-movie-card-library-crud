@@ -3,6 +3,8 @@ import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import Header from '../components/Header';
 
+import { Link } from 'react-router-dom';
+
 import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
@@ -76,6 +78,9 @@ class MovieList extends Component {
           selectedGenre={selectedGenre}
           handleChange={this.handleChange}
         />
+        <Link className="link" to="/movies/new">
+          ADICIONAR CARTÃO
+        </Link>
         <div data-testid="movie-list" className="wrapper">
           {filteredMovies.map((movie) => (
             <MovieCard key={movie.title} movie={movie} />

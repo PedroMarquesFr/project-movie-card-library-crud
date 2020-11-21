@@ -8,6 +8,9 @@ header {
   padding: 14px 0;
 }
 
+.wrapper {
+  height: 100%;
+}
 input,
 select,
 .heart-label {
@@ -18,6 +21,7 @@ select,
   border: none;
   background-color: rgb(0, 0, 0);
   color: rgba(255, 255, 255, 0.837);
+  transition: 0.5s;
 }
 
 select:hover,
@@ -120,10 +124,19 @@ section .movie-icon {
   fill: red;
 }
 
-button .info-button {
+button.info-button {
+  border: 1px solid rgb(255, 0, 0);
+  color: red;
+}
+button.info-button:hover {
+  border: 1px solid rgb(255, 0, 0);
   background-color: red;
 }
 
 .search-label .input-search:hover + .icon-search {
   color: black;
+}
+
+h2 {
+  margin-right: 20px;
 }

@@ -13,17 +13,18 @@ export default class Header extends Component {
         <section>
           <RiMovie2Line className="movie-icon" />
           <h2>PPFlix</h2>
+          {searchText !== undefined && (
+            <SearchBar
+              searchText={searchText}
+              onSearchTextChange={this.props.handleChange}
+              bookmarkedOnly={bookmarkedOnly}
+              onBookmarkedChange={this.props.handleChange}
+              selectedGenre={selectedGenre}
+              onSelectedGenreChange={this.props.handleChange}
+            />
+          )}
         </section>
-        {searchText !== undefined && (
-          <SearchBar
-            searchText={searchText}
-            onSearchTextChange={this.props.handleChange}
-            bookmarkedOnly={bookmarkedOnly}
-            onBookmarkedChange={this.props.handleChange}
-            selectedGenre={selectedGenre}
-            onSelectedGenreChange={this.props.handleChange}
-          />
-        )}
+
         <div className="menu">
           <button>ENTRAR</button>
           <button className="info-button">INFO</button>
