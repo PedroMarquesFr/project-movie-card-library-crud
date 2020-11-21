@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import '../styles/movieDetails.css';
+
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import Header from '../components/Header';
 
 class MovieDetails extends Component {
   constructor() {
@@ -46,20 +49,38 @@ class MovieDetails extends Component {
 
     return (
       <div data-testid="movie-details">
-        <h2>{title}</h2>
+        <Header />
         <img
+          className="img-datails"
           alt="Movie Cover"
           src={imagePath.includes('https') ? `${imagePath}` : `../${imagePath}`}
         />
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to="/">VOLTAR</Link>
-        <Link to={`/movies/${this.props.match.params.id}/edit`}>EDITAR</Link>
-        <Link onClick={this.HandleDelete} to="/">
-          DELETAR
-        </Link>
+        <div className="info-wrapper">
+          <div lassName="description-w">
+            <h2 className="title-details">{title}</h2>
+            <hr className="hr-details" />
+            <p className="subtitle-details">{`${subtitle}`}</p>
+            <p className="storyline-details">{`Storyline: ${storyline}`}</p>
+          </div>
+          <div className="extra-w">
+            <p className="genre-details">{genre}</p>
+            <p className="rating-details">{rating}</p>
+          </div>
+        </div>
+
+        <section className="link-wrapper">
+          <hr className="hr-details sec" />
+          <Link className="link det" to="/">
+            VOLTAR
+          </Link>
+          <Link className="link det" to={`/movies/${this.props.match.params.id}/edit`}>
+            EDITAR
+          </Link>
+          <Link className="link det" onClick={this.HandleDelete} to="/">
+            DELETAR
+          </Link>
+          <hr className="hr-details sec" />
+        </section>
       </div>
     );
   }
