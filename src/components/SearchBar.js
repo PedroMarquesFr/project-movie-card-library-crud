@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { FiHeart } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
+
 class SearchBar extends Component {
   render() {
     const {
@@ -12,8 +15,8 @@ class SearchBar extends Component {
       onSelectedGenreChange,
     } = this.props;
     return (
-      <form data-testid="search-bar-form">
-        <label data-testid="text-input-label" htmlFor="f">
+      <form data-testid="search-bar-form" className="form-filter">
+        <label data-testid="text-input-label" htmlFor="f" className="search-label">
           <input
             type="text"
             value={searchText}
@@ -22,27 +25,26 @@ class SearchBar extends Component {
             id="f"
             name="searchText"
             placeholder="Inclui o texto"
+            className="input-search"
           />
+          <FiSearch className="icon-search" />
         </label>
 
-        <br />
-
-        <label data-testid="checkbox-input-label" htmlFor="a">
-          Mostrar somente favoritos
+        <label data-testid="checkbox-input-label" htmlFor="a" className="heart-label">
+          Favoritos
           <input
             type="checkbox"
+            className="checkmark"
             checked={bookmarkedOnly}
             onChange={onBookmarkedChange}
             data-testid="checkbox-input"
             id="a"
             name="bookmarkedOnly"
           />
+          <FiHeart className="icon-heart" />
         </label>
 
-        <br />
-
         <label data-testid="select-input-label" htmlFor="b">
-          Filtrar por gênero
           <select
             data-testid="select-input"
             value={selectedGenre}

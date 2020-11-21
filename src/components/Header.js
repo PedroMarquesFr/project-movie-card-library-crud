@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar';
 
+import { RiMovie2Line } from 'react-icons/ri';
+
 import '../styles/header.css';
 
 export default class Header extends Component {
@@ -8,7 +10,10 @@ export default class Header extends Component {
     const { searchText, bookmarkedOnly, selectedGenre } = this.props;
     return (
       <header>
-        <h2>logo</h2>
+        <section>
+          <RiMovie2Line className="movie-icon" />
+          <h2>PPFlix</h2>
+        </section>
         {searchText !== undefined && (
           <SearchBar
             searchText={searchText}
@@ -19,9 +24,9 @@ export default class Header extends Component {
             onSelectedGenreChange={this.props.handleChange}
           />
         )}
-        <div>
-          <p>Entrar</p>
-          <p>Info</p>
+        <div className="menu">
+          <button>ENTRAR</button>
+          <button className="info-button">INFO</button>
         </div>
       </header>
     );
