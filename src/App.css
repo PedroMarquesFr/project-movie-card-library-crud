@@ -82,6 +82,7 @@ hr {
 }
 
 .h1-title {
+  padding-top: 50px;
   font-size: 64px;
   color: white;
 }

@@ -58,11 +58,14 @@ div {
 }
 
 .hr-details {
-  width: 200px;
+  width: 128px;
 
   margin: 20px 0 20px 10px;
 }
 
+.hr-details.sec {
+  width: 64px;
+}
 .det {
   margin: 70px 10px;
 }
