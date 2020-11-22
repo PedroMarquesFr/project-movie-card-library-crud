@@ -78,9 +78,12 @@ class MovieList extends Component {
           selectedGenre={selectedGenre}
           handleChange={this.handleChange}
         />
-        <Link className="link" to="/movies/new">
-          ADICIONAR CARTÃO
-        </Link>
+        <section className="info-wrp">
+          <h1 className="h1-title">FILMES</h1>
+          <Link className="link" to="/movies/new">
+            ADICIONAR CARTÃO
+          </Link>
+        </section>
         <div data-testid="movie-list" className="wrapper">
           {filteredMovies.map((movie) => (
             <MovieCard key={movie.title} movie={movie} />
