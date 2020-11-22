@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
+import '../styles/formMovie.css';
+
+import Header from '../components/Header';
+
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -27,8 +31,13 @@ class NewMovie extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div data-testid="new-movie">
-        <MovieForm onSubmit={this.handleSubmit} />
+      <div>
+        <Header />
+
+        <div data-testid="new-movie" className="div-movie">
+          <h1 className="abs-h1">Novo Filme</h1>
+          <MovieForm onSubmit={this.handleSubmit} />
+        </div>
       </div>
     );
   }

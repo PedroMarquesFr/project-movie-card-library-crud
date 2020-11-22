@@ -56,7 +56,7 @@ class MovieDetails extends Component {
           src={imagePath.includes('https') ? `${imagePath}` : `../${imagePath}`}
         />
         <div className="info-wrapper">
-          <div lassName="description-w">
+          <div className="description-w">
             <h2 className="title-details">{title}</h2>
             <hr className="hr-details" />
             <p className="subtitle-details">{`${subtitle}`}</p>
@@ -69,7 +69,6 @@ class MovieDetails extends Component {
         </div>
 
         <section className="link-wrapper">
-          <hr className="hr-details sec" />
           <Link className="link det" to="/">
             VOLTAR
           </Link>
@@ -79,7 +78,6 @@ class MovieDetails extends Component {
           <Link className="link det" onClick={this.HandleDelete} to="/">
             DELETAR
           </Link>
-          <hr className="hr-details sec" />
         </section>
       </div>
     );

@@ -1,0 +1,27 @@
+.div-movie {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 94vh;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgb(0, 0, 0);
+  background: linear-gradient(209deg, rgba(62, 8, 8, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.frm-wrapper {
+  padding: 28px;
+  background-color: rgb(26, 26, 26);
+  border-radius: 20px;
+}
+
+.button-submit {
+  border: none;
+  padding: 6px 8px;
+  margin-top: 10px;
+}
+
+.abs-h1 {
+  margin-bottom: 20px;
+}

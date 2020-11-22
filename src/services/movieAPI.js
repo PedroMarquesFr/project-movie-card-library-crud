@@ -6,14 +6,13 @@ const readMovies = () => JSON.parse(localStorage.getItem('movies'));
 
 const saveMovies = (movies) => localStorage.setItem('movies', JSON.stringify(movies));
 
-export const getMovies = () => (
+export const getMovies = () =>
   new Promise((resolve) => {
     setTimeout(() => {
       const movies = readMovies();
       resolve(movies);
-    }, 2000);
-  })
-);
+    }, 500);
+  });
 
 export const getMovie = (movieId) => {
   const movie = readMovies().find((mov) => mov.id === parseInt(movieId, 10));
@@ -21,7 +20,7 @@ export const getMovie = (movieId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(movie);
-    }, 2000);
+    }, 500);
   });
 };
 
@@ -37,7 +36,7 @@ export const updateMovie = (updatedMovie) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('OK');
-    }, 1000);
+    }, 250);
   });
 };
 
@@ -51,7 +50,7 @@ export const createMovie = (movieData) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve('OK');
-    }, 1000);
+    }, 250);
   });
 };
 
@@ -63,6 +62,6 @@ export const deleteMovie = (movieId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ status: 'OK' });
-    }, 1000);
+    }, 250);
   });
 };

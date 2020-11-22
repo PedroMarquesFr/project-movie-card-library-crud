@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
+import '../styles/formMovie.css';
+
 import { Loading, MovieForm } from '../components';
+import Header from '../components/Header';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -47,8 +50,12 @@ class EditMovie extends Component {
     }
 
     return (
-      <div data-testid="edit-movie">
-        <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+      <div>
+        <Header />
+        <div data-testid="edit-movie" className="div-movie">
+          <h1 className="abs-h1">{movie.title}</h1>
+          <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+        </div>
       </div>
     );
   }

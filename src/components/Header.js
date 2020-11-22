@@ -12,7 +12,7 @@ export default class Header extends Component {
       <header>
         <section>
           <RiMovie2Line className="movie-icon" />
-          <h2>PedroFlix</h2>
+          <h2>CRUDflix</h2>
           {searchText !== undefined && (
             <SearchBar
               searchText={searchText}

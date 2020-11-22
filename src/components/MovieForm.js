@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -127,7 +127,7 @@ class MovieForm extends React.Component {
   renderSubmitButton() {
     return (
       <div>
-        <button type="button" onClick={this.handleSubmit}>
+        <button className="button-submit" type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </div>
@@ -136,7 +136,7 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="frm-wrapper">
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -151,18 +151,18 @@ class MovieForm extends React.Component {
   }
 }
 
-MovieForm.propTypes = {
-  movie: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    storyline: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    imagePath: PropTypes.string.isRequired,
-    bookmarked: PropTypes.bool.isRequired,
-    genre: PropTypes.string.isRequired,
-  }).isRequired,
-  onSubmit: PropTypes.func.isRequired,
-};
+// MovieForm.propTypes = {
+//   movie: PropTypes.shape({
+//     id: PropTypes.number.isRequired,
+//     title: PropTypes.string.isRequired,
+//     subtitle: PropTypes.string.isRequired,
+//     storyline: PropTypes.string.isRequired,
+//     rating: PropTypes.number.isRequired,
+//     imagePath: PropTypes.string.isRequired,
+//     bookmarked: PropTypes.bool.isRequired,
+//     genre: PropTypes.string.isRequired,
+//   }).isRequired,
+//   onSubmit: PropTypes.func.isRequired,
+// };
 
 export default MovieForm;

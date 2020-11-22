@@ -79,7 +79,9 @@ class MovieList extends Component {
           handleChange={this.handleChange}
         />
         <section className="info-wrp">
-          <h1 className="h1-title">FILMES</h1>
+          <div>
+            <h1 className="h1-title">FILMES</h1>
+          </div>
           <Link className="link" to="/movies/new">
             ADICIONAR CARTÃO
           </Link>
